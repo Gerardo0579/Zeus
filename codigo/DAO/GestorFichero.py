@@ -32,7 +32,7 @@ class GestorFichero:
             archivo = glob.glob(pathArchivo)
             archivoAbierto = csv.reader(open(archivo[0], 'r'), delimiter=';')
             for fila,columna in enumerate(archivoAbierto):
-                    listaDeBloques.append(columna[0][0:8])
+                listaDeBloques.append(columna[0][0:8])
         except Exception as e:
             listaDeBloques.append("No hay bloques disponibles")
         return listaDeBloques
