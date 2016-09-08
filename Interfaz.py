@@ -6,17 +6,39 @@ ventana = Tk()
 ventana.geometry("800x600")
 
 #Titulo de la ventana
-ventana.title("Rubricas")
+ventana.title("Generador de rubricas")
 
-label = Label(text="Sistema de secuencias").grid(row=0,column=1)
+#Titulo del programa
+titulo = Label(text="Sistema de secuencias")
+titulo.pack()
 
-label = Label(text="Asignatura").grid(row=1,column=0)
-label = Label(text="Bloque").grid(row=1,column=3)
-
-label = Label(text="Semestre").grid(row=2,column=0)
-label = Label(text="Nombre del docente").grid(row=2,column=3)
-
-button = Button(text="Iniciar rubrica").grid(row=3,column=3)
+#Asignatura
+asignaturaLabel = Label(text="Asignatura")
+asignaturaLabel.pack()
+asignaturaListbox = Listbox()
+asignaturaListbox.pack()
+for item in ["Fisica", "Matematicas", "Ciencias", "Diseño"]:
+    asignaturaListbox.insert(END, item)
+#Bloque
+bloqueLabel = Label(text="Bloque")
+bloqueLabel.pack()
+bloqueListbox = Listbox(selectmode=BROWSE)
+bloqueListbox.pack()
+for item in ["1", "2", "3"]:
+    bloqueListbox.insert(END, item)
+#Semestre
+semestreLabel = Label(text="Semestre")
+semestreLabel.pack()
+semestreListbox = Listbox(selectmode=BROWSE)
+semestreListbox.pack()
+for item in ["1", "2", "3"]:
+    semestreListbox.insert(END, item)
+#Docente
+docenteLabel = Label(text="Nombre Docente")
+docenteLabel.pack()
+#Boton
+button = Button(text="Iniciar rubrica")
+button.pack()
 
 
 #Para los usuarios de windows linux no lo necesita
