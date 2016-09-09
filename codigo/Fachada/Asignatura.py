@@ -23,25 +23,31 @@ class Asignatura:
     def getSemestre():
         return semestre
 
-    def listarAsignaturas():
+    def listarAsignaturas(self):
+        gestorFichero = GestorFichero()
+        listaDeAsignaturas = []
         try:
             listaDeAsignaturas = gestorFichero.getAsignaturas()
         except Exception as e:
-            listaDeAsignaturas = ("No hay asignaturas que mostrar :/")
+            listaDeAsignaturas.append("No hay asignaturas que mostrar :/")
         return listaDeAsignaturas
 
-    def listarBloques():
+    def listarBloques(self):
+        gestorFichero = GestorFichero()
+        listaDeBloques = []
         try:
             listaDeBloques = gestorFichero.getBloquesAsignatura(nombreAsignatura, semestre)
         except Exception as e:
-            listaDeBloques = ("Debes seleccionar una asignatura antes")
+            listaDeBloques.append("Debes seleccionar una asignatura antes")
         return listaDeBloques
 
-    def listarSemestres():
+    def listarSemestres(self):
+        gestorFichero = GestorFichero()
+        listaDeSemestres = []
         try:
             listaDeSemestres = gestorFichero.getSemestresAsignatura(nombreAsignatura)
         except Exception as e:
-            listaDeSemestres = ("Debes seleccionar una asignatura antes")
+            listaDeSemestres.append("Debes seleccionar una asignatura antes")
         return listaDeSemestres
 
     def setAsignatura(self, miAsignatura):
