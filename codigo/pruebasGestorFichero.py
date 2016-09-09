@@ -25,7 +25,7 @@ class TestStringMethods(unittest.TestCase):
         gestor = GestorFichero()
         resultado = 0
         semestres = gestor.getBloquesAsignatura("Física","1")
-        lista = ["Bloque 1","Bloque 1","Bloque 2","Bloque 2","Bloque 3","Bloque 3","Bloque 4","Bloque 4",]
+        lista = ["Bloque 1","Bloque 2","Bloque 3","Bloque 4",]
         self.assertEqual(lista, semestres)
 
 if __name__ == '__main__':

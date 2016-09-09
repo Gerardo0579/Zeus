@@ -67,20 +67,27 @@ class TestStringMethods(unittest.TestCase):
         resultado = len(asignaturas)
         self.assertEqual(2, resultado)
 
-    def test_listarSemestres(self):
-        asignatura = Asignatura()
-        asignaturas = asignatura.listarAsignaturas()
-        semestres = asignatura.listarSemestres()
-        resultado = len(semestres)
-        self.assertEqual(2, resultado)
+#    def test_listarSemestres(self):
+#        asignatura = Asignatura()
+#        asignatura.setAsignatura("Física")
+#        semestres = asignatura.listarSemestres()
+#        resultado = len(semestres)
+#        self.assertEqual(2, resultado)
 
-    def test_listarBloques(self):
+#    def test_listarBloques(self):
+#        asignatura = Asignatura()
+#        asignatura.setAsignatura("Física")
+#        asignatura.setSemestre("1")
+#        bloques = asignatura.listarBloques()
+#        resultado = len(bloques)
+#        self.assertEqual(4, resultado)
+
+
+    def test_getAsignatura(self):
         asignatura = Asignatura()
-        asignaturas = asignatura.listarAsignaturas()
-        semestres = asignatura.listarSemestres()
-        bloques = asignatura.listarBloques()
-        resultado = len(bloques)
-        self.assertEqual(2, resultado)
+        asignatura.setBloque("Física")
+        resultado = asignatura.getAsignatura()
+        self.assertEqual("Física", resultado)
 
 if __name__ == '__main__':
     unittest.main()

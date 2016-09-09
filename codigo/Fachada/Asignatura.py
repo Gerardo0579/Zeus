@@ -14,16 +14,17 @@ class Asignatura:
     gestorFichero = GestorFichero()
     nombreAsignatura = " "
     semestre = 0
-    def getAsignatura():
-        return nombreAsignatura
+    def getAsignatura(self):
+        return self.nombreAsignatura
 
-    def getBloque():
+    def getBloque(self):
         return bloque
 
-    def getSemestre():
+    def getSemestre(self):
         return semestre
 
     def listarAsignaturas(self):
+        global gestorFichero
         gestorFichero = GestorFichero()
         listaDeAsignaturas = []
         try:
@@ -33,6 +34,7 @@ class Asignatura:
         return listaDeAsignaturas
 
     def listarBloques(self):
+        global gestorFichero
         gestorFichero = GestorFichero()
         listaDeBloques = []
         try:
@@ -42,6 +44,7 @@ class Asignatura:
         return listaDeBloques
 
     def listarSemestres(self):
+        global gestorFichero
         gestorFichero = GestorFichero()
         listaDeSemestres = []
         try:
@@ -56,7 +59,7 @@ class Asignatura:
             if miAsignatura.isdigit():
                 resultadoAsignacion = 0
             else:
-                nombreAsignatura = miAsignatura
+                self.nombreAsignatura = miAsignatura
                 resultadoAsignacion = 1
         else:
             resultadoAsignacion = 0
@@ -69,7 +72,8 @@ class Asignatura:
                 resultadoAsignacion = 0
             else:
                 if miBloque.isdigit():
-                    bloque = miBloque
+                    global bloque
+                    bloque = miBloque + ".csv"
                     resultadoAsignacion = 1
                 else:
                     resultadoAsignacion = 0
@@ -84,6 +88,7 @@ class Asignatura:
                 resultadoAsignacion = 0
             else:
                 if miSemestre.isdigit():
+                    global semestre
                     semestre = miSemestre
                     resultadoAsignacion = 1
                 else:
