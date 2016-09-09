@@ -13,10 +13,17 @@ ventana.geometry("550x160")
 ventana.title("Rubricas")
 #Subtitulo
 subTitulo = Label(cuadro,text="Sistema de secuencias").grid(row=0,column=1)
+
 #Asignatura
 asignatura = Asignatura()
+asignaturaTomada = ""
 asignaturaLabel = Label(cuadro,text="Asignatura").grid(row=1,column=0)
-asignaturaBox = ttk.Combobox(cuadro,asignatura.listarAsignaturas()).grid(row=2,column=0)
+asignaturaBox = ttk.Combobox(cuadro,textvariable=asignaturaTomada)
+asignaturaBox.bind("<<ComboboxSelected>>")
+asignaturaBox['values'] = asignatura.listarAsignaturas()
+asignaturaBox.current(0)
+asignaturaBox.grid(row=2,column=0)
+
 #Bloque
 bloqueLabel = Label(cuadro,text="Bloque").grid(row=1,column=3)
 bloqueBox = ttk.Combobox(cuadro).grid(row=2,column=3)
